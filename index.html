@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Eine website zur verschlüsselung von text mithilfe von Caesar-Code">
+    <meta name="keywords" content="">
+    <meta name="author" content="Klasse 13 der Markus-Schule, Abschlussjahrgang 2019">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://github.com/klasse13/Material/blob/master/Icon%20(2).png?raw=true">
+    <title>Pädagogik & Psychologie</title>
+  </head>
+  <body>
+  
+<script>
+function caesar (text, shift) {
+  return text.toUpperCase().replace(/[^A-Z]/g,'').replace(/./g, function(a) {
+    return String.fromCharCode(65+(a.charCodeAt(0)-65+shift)%26);
+  });
+}
+ 
+// Tests
+var text = 'veni, vidi, vici';
+for (var i = 0; i<26; i++) {
+  console.log(i+': '+caesar(text,i));
+}
+</script>
